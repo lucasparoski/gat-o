@@ -2,15 +2,14 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Identificação do Gato</title>
+  <title>Kafka 🐾</title>
 
-  <!-- Responsivo para celular -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f2f2f2;
       margin: 0;
       padding: 0;
       display: flex;
@@ -21,18 +20,22 @@
       background-color: #ffffff;
       margin: 20px;
       padding: 20px;
-      max-width: 400px;
+      max-width: 420px;
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       text-align: center;
     }
 
     img {
       width: 100%;
-      max-width: 250px;
-      border-radius: 12px;
+      max-width: 260px;
+      border-radius: 14px;
       margin-bottom: 15px;
+    }
+
+    h1 {
+      margin-top: 0;
     }
 
     .info {
@@ -42,19 +45,32 @@
 
     .info p {
       margin: 6px 0;
+      font-size: 15px;
     }
 
-    .contato {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: #fff3cd;
+    .whatsapp {
+      margin-top: 25px;
+    }
+
+    .whatsapp a {
+      display: block;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 14px;
       border-radius: 10px;
     }
 
-    .contato a {
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
+    .whatsapp a:hover {
+      background-color: #1ebe5d;
+    }
+
+    .aviso {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
@@ -63,24 +79,23 @@
   <div class="card">
     <h1>🐾 Olá, eu sou o Kafka!</h1>
 
-    <!-- IMAGEM EXTERNA (IMGUR) -->
-    <img src="https://i.imgur.com/TULHyCN.jpeg" alt="Foto do gato">
+    <!-- Imagem do gato -->
+    <img src="https://i.imgur.com/TULHyCN.jpeg" alt="Foto do gato Kafka">
 
     <div class="info">
-      <p><strong>Idade:</strong> 3 anos</p>
-      <p><strong>Cor:</strong> Laranja</p>
-      <p><strong>Castrado:</strong> Sim</p>
+      <p><strong>Nome:</strong> Kafka</p>
+      <p><strong>Espécie:</strong> Gato doméstico</p>
     </div>
 
-    <div class="contato">
-      <p>📞 <strong>Contato do tutor</strong></p>
-      <p>
-        Lucas<br>
-        <a href="tel:+5542984219050">(42) 99999-9999</a>
-      </p>
+    <!-- BOTÃO WHATSAPP -->
+    <div class="whatsapp">
+      <a href="https://wa.me/5542984219050?text=Oi!%20Encontrei%20o%20Kafka%20e%20escaneei%20o%20QR%20Code."
+         target="_blank">
+        📲 Enviar mensagem no WhatsApp
+      </a>
     </div>
 
-    <p style="margin-top: 15px;">
+    <p class="aviso">
       Se você me encontrou, por favor entre em contato 🙏
     </p>
   </div>
