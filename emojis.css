@@ -5,7 +5,7 @@
   font-size: 26px;
   pointer-events: none;
   animation: subirEmoji linear forwards;
-  z-index: 0;
+  z-index: 10;
   opacity: 0.9;
 }
 
