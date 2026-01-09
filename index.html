@@ -14,9 +14,8 @@
       display: flex;
       justify-content: center;
       min-height: 100vh;
-
-      /* FUNDO MARROM + LARANJA */
       background: linear-gradient(135deg, #c97a3a, #f2a65a);
+      overflow-x: hidden;
     }
 
     .card {
@@ -28,6 +27,8 @@
       border-radius: 16px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     img {
@@ -63,10 +64,6 @@
       border-radius: 12px;
     }
 
-    .whatsapp a:hover {
-      background-color: #1ebe5d;
-    }
-
     .telefone {
       margin-top: 12px;
       font-size: 15px;
@@ -90,14 +87,38 @@
       font-size: 14px;
       color: #666;
     }
+
+    /* ===== EMOJIS FLUTUANTES ===== */
+    .emoji-flutuante {
+      position: fixed;
+      bottom: -40px;
+      pointer-events: none;
+      animation: subirEmoji linear forwards;
+      z-index: 0;
+      opacity: 0.9;
+    }
+
+    @keyframes subirEmoji {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.2);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 
 <body>
+
   <div class="card">
     <h1>🐾 Olá, eu sou o Kafka!</h1>
 
-    <!-- Imagem do gato -->
     <img src="https://i.imgur.com/TULHyCN.jpeg" alt="Foto do gato Kafka">
 
     <div class="info">
@@ -105,7 +126,6 @@
       <p><strong>Cor:</strong> Laranja 🧡</p>
     </div>
 
-    <!-- BOTÃO WHATSAPP -->
     <div class="whatsapp">
       <a href="https://wa.me/5542984219050?text=Oi!%20Encontrei%20o%20Kafka%20e%20escaneei%20o%20QR%20Code."
          target="_blank">
@@ -113,12 +133,10 @@
       </a>
     </div>
 
-    <!-- TELEFONE PARA LIGAÇÃO -->
     <div class="telefone">
       📞 Ou ligue: <a href="tel:+5542984219050">(42) 98421-9050</a>
     </div>
 
-    <!-- NOME DO TUTOR -->
     <div class="tutor">
       Tutor: <strong>Lucas Paroski</strong>
     </div>
@@ -127,5 +145,32 @@
       Se você me encontrou, por favor entre em contato 🙏
     </p>
   </div>
+
+  <!-- ===== JAVASCRIPT DOS EMOJIS ===== -->
+  <script>
+    const emojis = ["🐾", "🐱", "🧡"];
+
+    function criarEmoji() {
+      const emoji = document.createElement("div");
+      emoji.classList.add("emoji-flutuante");
+      emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+
+      emoji.style.left = Math.random() * 100 + "vw";
+
+      const duracao = Math.random() * 3 + 4; // 4 a 7 segundos
+      emoji.style.animationDuration = duracao + "s";
+
+      emoji.style.fontSize = (22 + Math.random() * 14) + "px";
+
+      document.body.appendChild(emoji);
+
+      setTimeout(() => {
+        emoji.remove();
+      }, duracao * 1000);
+    }
+
+    setInterval(criarEmoji, 900);
+  </script>
+
 </body>
 </html>
